@@ -17,35 +17,39 @@ void dfs(int u)
 //falta um negocio
 int main()
 {
-	 //freopen("output.txt","w",stdout);
-    int N; cin >> N;
-    char s;
-    cin.ignore();
-    for(int k=0;k<N;k++)
+	//freopen("output.txt","w",stdout);
+    	int N; cin >> N;
+    	char s;
+    	string str;
+    	cin.ignore();
+    	for(int k=0;k<N;k++)
 	{
 		cin >> s;
 		int e = s-64;
-	    for(int j=0;j<e-1;j++)
-	    {
-	        char a,b; cin >> a >> b;
-            adjlist[a-65].push_back(b-65);
-            adjlist[b-65].push_back(a-65);
-	    }
-	    int res = 0;
+        	cin.ignore();
+        	getline(cin, str);
+		while(str!="\0")
+		{
+		    adjlist[str[0]-65].push_back(str[1]-65);
+		    adjlist[str[1]-65].push_back(str[0]-65);
+		    getline(cin,str);
+		}
+		int res = 0;
 		for(int i=0;i<e;i++)
 		{
 			if(!vis[i]){
 				res++;
 				dfs(i);
-				
 			}
 		}
 		cout << res << endl;
-		cout << endl;
-		for(int i=0;i<e;i++)
-		{
-			adjlist[i].clear();
-			vis[i] = false;
-		}
+		if(k<N-1){
+            	cout << endl;
+        }
+	for(int i=0;i<e;i++)
+	{
+		adjlist[i].clear();
+		vis[i] = false;
+	}
     }
 }
