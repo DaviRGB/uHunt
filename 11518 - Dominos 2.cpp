@@ -12,7 +12,7 @@ void dfs(int u)
     for(int v:adjlist[u])
     {
 		if(!vis[v]){
-			cont++;
+			//cont++;
 			dfs(v);
 		}
 	}
