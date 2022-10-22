@@ -45,7 +45,7 @@ int main()
 		cout << cont << endl;
 		for(int i=0;i<=v;i++)
 		{
-			adjlist[i].clear();
+			adjlist[i].clear(); //que desgraça
 			vis[i] = false;
 		}
 		cont = 0;
