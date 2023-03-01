@@ -47,18 +47,22 @@ void solve()
             cin >> mat[i][j];
             if(mat[i][j]=='X') preto++;
             else if(mat[i][j]=='O') branco++;
-            else{
-                if(mat[i][j]=='.')
-                {
-                    cont = 0;
-                    black = white = false;
-                    floodfill(i,j);
-                    if(!black && white) branco+=cont;
-                    else if(black && !white) preto+=cont;
-                }
-            }
         }
     }
+    for(int i=0;i<9;i++)
+    {
+		for(int j=0;j<9;j++)
+		{
+			if(mat[i][j]=='.')
+			{
+				cont = 1;
+				black = white = false;
+				floodfill(i,j);
+				if(!black && white) branco+=cont;
+				else if(black && !white) preto+=cont;
+			}
+		}
+	}
     cout << "Black " << preto << " White " << branco << endl;
 }
 int main()
