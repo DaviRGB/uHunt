@@ -3,7 +3,7 @@
 using namespace std;
 
 char mat[12][12];
-bool vis[52][52];
+bool vis[12][12];
 int vx[]={0, 1, -1, 0, 1, -1, -1, 1};
 int vy[]={1, 0, 0, -1, 1, 1, -1, -1};
 bool black,white;
@@ -54,7 +54,7 @@ void solve()
 		for(int j=0;j<9;j++){
 			if(mat[i][j]=='.' && !vis[i][j])
 			{
-				cont = 0; //começa com 1 ou com 0 fora 0 dentro 1
+				cont = 1; //começa com 1 ou com 0 fora 0 dentro 1
                 black = white = false;
                 floodfill(i,j);
                 for(int k = 0; k < 9; k++) {
