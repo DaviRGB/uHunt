@@ -40,6 +40,7 @@ void floodfill(int x,int y)
 void solve()
 {
     int branco = 0,preto = 0;
+	memset(vis,0,sizeof(vis));
     for(int i=0;i<9;i++)
     {
         for(int j=0;j<9;j++)
