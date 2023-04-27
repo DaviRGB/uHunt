@@ -8,7 +8,7 @@ vector<pair<int,int>> dir {{-2,-1} , {-2,1} , {2,-1} , {2,1} , {-1,-2} , {-1,2} 
 
 void limpa() {
   memset(dist,0,sizeof(dist));
-	memset(vis,0,sizeof(vis));
+  memset(vis,0,sizeof(vis));
 }
 
 bool can(int i,int j) {
