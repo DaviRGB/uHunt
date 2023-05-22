@@ -11,9 +11,8 @@ using namespace std;
 vector<vector<pair<int,int>>>adj;
 vector<bool>visited;
 vector<int>dist;
-int cont;
 
-void bfs(int start,int time) {
+void bfs(int start) {
 	
 	priority_queue<pair<int,int>,vector<pair<int,int>>,greater<pair<int,int>>>pq;
 	pq.push({0,start});
@@ -32,7 +31,7 @@ void bfs(int start,int time) {
 
 int main () {
 	ios::sync_with_stdio(false); cin.tie(nullptr); cout.tie(nullptr);
-	entrada; saida;
+	//~ entrada; saida;
 	int t, r = 0;
 	cin >> t;
 	while(t--) {
@@ -44,14 +43,13 @@ int main () {
 		for(int i = 0 ; i < m ; i++) {
 			int a,b,p; cin >> a >> b >> p;
 			a--; b--;
-			adj[a].pb({b,p});
+			adj[b].pb({a,p});
 		}
-		cont = 0;
-		bfs(0,time);
+		int cont = 0;
+		out--;
+		bfs(out);
 		for(int i = 0; i < n; i++) {
-			if(dist[out] <= time) {
-				
-			}
+			if(dist[i] <= time) cont++;
 		}
 		cout << cont << '\n';
 	}
